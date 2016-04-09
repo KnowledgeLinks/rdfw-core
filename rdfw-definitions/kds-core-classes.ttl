@@ -35,7 +35,9 @@ kds:UserGroup kds:primaryKey rdfs:label ;
 	kds:subjectPattern "http://knowledgelinks.io/ns/data-resources/,!--slugify(rdfs:label)" .
 	
 kds:UserGroupMember a kds:ControlledClass ;
-	kds:storageType "blanknode" .
+	kds:storageType "blanknode" ;
+	kds:primaryKey kds:hasUser ;
+	kds:blankNodeLink kds:hasUser .
 	
 kds:PasswordClass a kds:ControlledClass;
 	kds:storageType "object" .
