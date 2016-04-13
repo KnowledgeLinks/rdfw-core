@@ -282,7 +282,23 @@ kds:hasPassword a rdf:Property;
 kds:hasMember a rdf:Property;
 	rdfs:domain kds:UserGroup;
 	rdfs:range kds:UserGroupMember;
-	kds:requiredByDomain kds:UserGroup .
+	kds:requiredByDomain kds:UserGroup ;
+	kds:formDefault [
+		kds:formLabelName "UserGroup";        
+		kds:formFieldName "grouplookup";
+		kds:formFieldHelp "Select the usergroup";
+		kds:fieldType [
+			a kdr:SelectField;
+			kds:selectQuery "SELECT ?s ?name ?user 
+							{
+								?group a kds:UserGroup .
+								?group rdfs:label ?name .
+							}
+							ORDER BY ?name";
+			kds:selectBoundValue "?group";
+			kds:selectDisplay "?name"
+		]	
+	] .
 	
 kds:dateAdded a rdf:Property;
 	rdfs:domain kds:UserGroupMember;
