@@ -118,7 +118,7 @@ schema:alternativeName a rdf:Property;
 		kds:calculation "slugify(schema:name)" 
 	] .
 
-rdf:Class kds:storageType "object" ;
+rdfs:Class kds:storageType "object" ;
 	a kds:ControlledClass .
 
 schema:url a rdf:Property;
