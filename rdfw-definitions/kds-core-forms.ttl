@@ -205,19 +205,19 @@ kdr:UserForm a kds:FormClass;
 		kds:propUri kds:changePasswordRequired;
 		kds:formFieldOrder 6;
 		kds:formLayoutRow 5
-	];
-	kds:hasProperty [
-		kds:propUri kds:hasUser;
-		kds:formFieldOrder 7;
-		kds:formLayoutRow 6;
-		kds:formLabelName "Add User Groups";
-		kds:fieldType [
-			a kdr:SubForm;
-			kds:subFormUri kdr:UserFormUserGroupSub;
-			kds:subFormInstance kdr:LinkWithParent;
-			kds:subFormMode kdr:RepeatingSubForm
-		]
-	] .
+	] . #;
+#	kds:hasProperty [
+#		kds:propUri kds:hasUser;
+#		kds:formFieldOrder 7;
+#		kds:formLayoutRow 6;
+#		kds:formLabelName "Add User Groups";
+#		kds:fieldType [
+#			a kdr:SubForm;
+#			kds:subFormUri kdr:UserFormUserGroupSub;
+#			kds:subFormInstance kdr:LinkWithParent;
+#			kds:subFormMode kdr:RepeatingSubForm
+#		]
+#	] .
 		
 kdr:UserGroupForm a kds:FormClass;
 	rdfs:label "Usergroup form";
