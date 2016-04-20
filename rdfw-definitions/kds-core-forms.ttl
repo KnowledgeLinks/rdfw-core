@@ -205,7 +205,7 @@ kdr:UserForm a kds:FormClass;
 		kds:propUri kds:changePasswordRequired;
 		kds:formFieldOrder 6;
 		kds:formLayoutRow 5
-	]. #;
+	] . #;
 #	kds:hasProperty [
 #		kds:propUri kds:hasUser;
 #		kds:formFieldOrder 7;

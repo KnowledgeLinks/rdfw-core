@@ -8,8 +8,8 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-kds:FormClass a rdf:Class;	
-	rdfs:subClassOf	rdf:Class;
+kds:FormClass a rdfs:Class;	
+	rdfs:subClassOf	rdfs:Class;
 	rdfs:label "Form Class";
 	rdfs:comment "Class is used to define an application/web form.".
 		
@@ -42,26 +42,26 @@ kds:userName a rdf:Property;
 	rdfs:label "Username";
 	rdfs:comment "Individual's username".
 	
-kds:PasswordClass a rdf:Class; 
+kds:PasswordClass a rdfs:Class; 
 	rdfs:subClassOf kds:SecurityClass;		
 	a 	kds:ControlledClass;		
 	rdfs:label "Password Object";
 	rdfs:comment "An object that stores a hashed password and its salt".
 			
-kds:UserClass a rdf:Class; 
+kds:UserClass a rdfs:Class; 
 	rdfs:subClassOf kds:SecurityClass;		
 	a 	kds:ControlledClass;		
 	rdfs:label "User Object";
 	rdfs:comment "An object for storing a user information".
 				
-kds:UserGroup a rdf:Class; 
+kds:UserGroup a rdfs:Class; 
 	rdfs:subClassOf kds:SecurityClass;		
 	a 	kds:ControlledClass	;	
 	rdfs:label "User group";
 	rdfs:comment "A class for defining a group of users.".
 	
-kds:SecurityClass a rdf:Class;
-	rdfs:subClassOf rdf:Class;
+kds:SecurityClass a rdfs:Class;
+	rdfs:subClassOf rdfs:Class;
 	rdfs:label "Security class";
 	rdfs:comment "Class for grouping security features".
 	
@@ -71,7 +71,7 @@ kds:propertyProcessing	 a 	kds:Property;
 	rdfs:label "Property processing";
 	rdfs:comment "States a method that property should be proccessed with".
 
-kds:PropertyProcessor a rdf:Class; 
+kds:PropertyProcessor a rdfs:Class; 
 	rdfs:subClassOf kds:InternalClass;
 	rdfs:label "Property Processor";
 	rdfs:comment "Object instructions on how to proccess a property before saving to the triplestore.".
@@ -110,7 +110,7 @@ kds:propertyValidation	 a 	rdf:Property;
 	rdfs:label "Validation Rule";
 	rdfs:comment "Validation rule to apply to the property before saving".
 
-kds:Validator a rdf:Class;
+kds:Validator a rdfs:Class;
 	rdfs:subClassOf kds:FormClass;
 	rdfs:label "Validator";
 	rdfs:comment "Object for defining a validation rule".
@@ -122,7 +122,7 @@ kds:formInstructions a rdf:Property;
 	rdfs:label "Form Instructions";
 	rdfs:comment "States default form instructions.". 
 	
-kds:FormInstructionsClass a rdf:Class;
+kds:FormInstructionsClass a rdfs:Class;
 	rdfs:label "Form Instructions Class";
 	rdfs:comment "This object stores the initial form parameters." .
 
@@ -147,7 +147,7 @@ kds:propertyAddOnCss a rdf:Property;
 kds:requiredByDomain a rdf:Property; 
 	rdfs:subPropertyOf kds:classProperty;
 	rdfs:domain rdf:Property;
-	rdfs:range rdf:Class;
+	rdfs:range rdfs:Class;
 	rdfs:label "Required";
 	rdfs:comment "States whether the class in the object position requires the property".
 
@@ -158,7 +158,7 @@ kds:requiredFormField a rdf:Property;
 	rdfs:label "Required";
 	rdfs:comment "States if the form requires the field".
 	
-kds:JsonClass a rdf:Class; 
+kds:JsonClass a rdfs:Class; 
 	rdfs:subClassOf kds:InternalClass;
 	rdfs:label "json Class";
 	rdfs:comment "Object store instuctions on how to build a json object".
@@ -206,7 +206,7 @@ kds:primaryKey a rdf:Property;
 	rdfs:label "Primary Key";
 	rdfs:comment "Primary key for the subject class. Primary key entails uniqueness and a required property/properties".
 
-kds:KeyObject a rdf:Class; 
+kds:KeyObject a rdfs:Class; 
 	rdfs:subClassOf kds:InternalClass;
 	rdfs:label "Primary Key group";
 	rdfs:comment "Object for storing a primary key comibination. Should be a blank node to the primaryKey property" .
@@ -242,7 +242,7 @@ kds:propertyField  a  rdf:Property;
 kds:useFor	 a 	rdf:Property;
 	rdfs:subPropertyOf kds:jsonProperty;
 	rdfs:domain kds:JsonClass;
-	rdfs:range rdf:Class;
+	rdfs:range rdfs:Class;
 	rdfs:label "use for";
 	rdfs:comment "specifies which class the json value items should be applied to".
 	
@@ -275,7 +275,7 @@ kds:formInstanceType	 a 	rdf:Property;
 	rdfs:label "Form Instance Type";
 	rdfs:comment "Specifies which form instance type. i.e. kds:NewForm, kds:EditForm, kds:DisplayForm".
 	
-kds:FormInstanceTypeClass a rdf:Class; 
+kds:FormInstanceTypeClass a rdfs:Class; 
 	rdfs:subClassOf kds:InternalClass;
 	rdfs:label "Form Instance Type Class";
 	rdfs:comment "Class for defining the differnt types of form instances. i.e. new, edit, display".
@@ -287,13 +287,13 @@ kds:applicationAction a rdf:Property;
 	rdfs:label "Application Action";
 	rdfs:comment "Action to be performed by application form generator".
 
-kds:ApplicationActionClass a rdf:Class; 
+kds:ApplicationActionClass a rdfs:Class; 
 	rdfs:subClassOf kds:InternalClass;
 	rdfs:label "Application Action Class";
 	rdfs:comment "Class used to define actions performed by the application on form generation".
 	
-kds:InternalClass a rdf:Class;
-	rdfs:subClassOf rdf:Class;
+kds:InternalClass a rdfs:Class;
+	rdfs:subClassOf rdfs:Class;
 	rdfs:label "Internal Vocabulary Class";
 	rdfs:comment "Sub-classes of this class are for only internal usage within the vocabulary." .
 
@@ -346,7 +346,7 @@ kds:formInstance a rdf:Property;
 	rdfs:label "Form Instance";
 	rdfs:comment "A special(override) insturctions for an instance of a form. i.e. new form, edit form, display form".
 
-kds:FormInstanceClass a rdf:Class; 
+kds:FormInstanceClass a rdfs:Class; 
 	rdfs:subClassOf kds:FormClass;
 	rdfs:label "Form Instance Class";
 	rdfs:comment "This class is used to describe how a field should behave during a specific instance of a form.".
@@ -391,7 +391,7 @@ kds:formDefault	 a 	rdf:Property;
 	rdfs:label "Form property/field";
 	rdfs:comment "The property to add the default descriptions on how a form should use the property.".
 
-kds:FormPropertyClass a rdf:Class;
+kds:FormPropertyClass a rdfs:Class;
 	rdfs:subClassOf kds:FormClass;
 	rdfs:label "Form Propert Class";
 	rdfs:comment "This class describes how a property should be formated in a form." .
@@ -417,12 +417,12 @@ kds:specifiedPermissions a rdf:Property;
 	rdfs:label "Specified Permissions";
 	rdfs:comment "Base level permissions".
 	
-kds:ControlledClass	 a 	rdf:Class;
-	rdfs:subClassOf rdf:Class;
+kds:ControlledClass	 a 	rdfs:Class;
+	rdfs:subClassOf rdfs:Class;
 	rdfs:label "Controlled Class";
 	rdfs:comment "A class controlled by the knowledgelinks data structures framework.".
 	
-kds:FieldClass	 a 	rdf:Class; 
+kds:FieldClass	 a 	rdfs:Class; 
 	rdfs:subClassOf kds:FormClass;		
 	rdfs:label "Field Class/Type";
 	rdfs:comment "Class used for defining the different field types/classes. i.e. a text field".	

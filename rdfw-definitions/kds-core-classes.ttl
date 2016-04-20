@@ -9,19 +9,19 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 
-rdf:Class kds:storageType "object" ;
+rdfs:Class kds:storageType "object" ;
 	a kds:ControlledClass .
 
-schema:Organization a rdf:Class;
+schema:Organization a rdfs:Class;
 	a kds:ControlledClass ;
 	kds:storageType "object";
 	kds:primaryKey schema:name.
 	
-schema:ImageObject a rdf:Class;
+schema:ImageObject a rdfs:Class;
 	a kds:ControlledClass ;
 	kds:storageType "object".
 	
-schema:URL a rdf:Class;
+schema:URL a rdfs:Class;
 	a kds:ControlledClass ;
 	kds:storageType "literal".
 	
