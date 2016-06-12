@@ -12,7 +12,7 @@
 	{% endif %}
 	{% if 'subform' in fld.kds_fieldType['rdf_type'].lower() %}
 		</div>
-			{{ fld(class_=fld.kds_css,readonly=not fld.editable) }}
+			{{ fld(class_=fld.kds_css,readonly=not fld.editable)|safe }}
 		<div class="row {{ form.rdf_instructions['rowCss'] }}">	
 	{% elif fld.type == "FieldList" %}
 		</div>

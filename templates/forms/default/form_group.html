@@ -1,5 +1,7 @@
 <div class="form-group {{ errorCss }}">	
+	{% if fld.type != 'HiddenField' %}
 	<label class="control-label">{{ fld.label }}{% if fld.flags.required and not display_mode %} *{% endif %}</label>
+	{% endif %}
 	<div title="{{ fld.description }}" data-toggle="tooltip">
 	{% if first %}
 		{{ fld(class_=fld.kds_css,disabled=not fld.editable,autofocus="autofocus") }}
